@@ -1,0 +1,14 @@
+import java.util.*;
+
+public class DateTester {
+    public static void main(String[] args) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR,1999);
+        System.out.println(c.get(Calendar.YEAR));
+        System.out.println(c.get(Calendar.MONTH));
+        String[] m = {"Jan","Feb","Mar","Apr"};
+        String currm = "Mar";
+        System.out.println(new String(m).indexOf(currm)));
+        System.out.println(c.get(Calendar.MONTH));
+    }
+}

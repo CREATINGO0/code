@@ -1,0 +1,15 @@
+# Makefile
+
+CC = gcc
+CFLAGS = -Wall
+
+CSRC = cipher.c vigenere.c
+HSRC = vigenere.h
+OBJ = $(CSRC:.c=.o)
+
+%o:%c $(HSRC)
+	$(CC) $(CFLAGS) -c $<
+
+# This is our target
+cipher: $(OBJ)
+	$(CC) $(CFLAGS) -o cipher $(OBJ)

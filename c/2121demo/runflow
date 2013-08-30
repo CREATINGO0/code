@@ -1,0 +1,10 @@
+curr
+direction
+floors[]
+
+while true
+    if direction==up traceverse floors[curr,top]
+    else traceverse floors[bottom,curr]
+
+    if existflag moveup
+    else reverse

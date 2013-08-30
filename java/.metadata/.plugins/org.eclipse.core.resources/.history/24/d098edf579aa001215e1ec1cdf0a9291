@@ -1,0 +1,97 @@
+/*
+   CS2911 Assn1, Room Booking Scenario
+   3423267, Chad Luo
+   */
+
+import java.util.*;
+
+public class Room {
+
+    /**
+     * Constructs a room object of capacity and name.
+     * @param aCapacity capacity of the rooom.
+     * @param aName name of the room.
+     */
+    public Room(int aCapacity, String aName) {
+        capacity = aCapacity;
+        name = aName;
+        reserveList = new ArrayList<Reservation>();
+    }
+
+    /**
+     * check if room has available slots for the reservation.
+     * @param newReserve to be checked
+     */
+    public boolean hasSlots(Reservation newReserve) {
+        boolean result = true;
+        if(newReserve.weeklist != null){
+            for(WeekReservation unBooked : newReserve.weeklist){
+                for(Reservation reserves : reserveList ){
+                    for(WeekReservation existed : reserves.weeklist){
+                        if(!(unBooked.end.before(existed.start) && unBooked.start.after(existed.end)) ) {
+                            result = false;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        return result;
+    }
+
+    /**
+     * check if room meeets capacity requirement.
+     * @param require the required capacity
+     */
+    public boolean hasCapacity(int require) {
+        return require <= capacity;
+    }
+
+    /**
+     * put reservation into records.
+     * @param reserve inserted after passing checks
+     */
+    public void append(Reservation reserve) {
+        reserveList.add(reserve);
+    }
+
+    /**
+     * delete reservation from records.
+     * @param reserve deleted from records
+     */
+    public void delete(Reservation reserve) {
+        reserveList.remove(reserve);
+    }
+
+    /**
+     * print reservation information.
+     */
+    public void print() {
+        System.out.println(name);
+        
+        for (Reservation reserve : reserveList ) {
+            System.out.println(reserve.user
+                    + " " + reserve.month
+                    + " " + reserve.date
+                    + " " + reserve.capacity
+                    + " " + reserve.duration
+                    + " " + reserve.title);
+        }
+        /*
+
+               for(WeekReservation wkrsrv : weeklist){
+               System.out.print(reserve.user
+               + " " + Calendar.MONTH
+               + " " + Calendar.DAY_OF_MONTH
+               + " " + reserve.capacity
+               + " " + reserve.duration
+               + " " + reserve.title);
+               }*/
+        }
+
+    public int capacity;
+    public String name;
+    public ArrayList<Reservation> reserveList;
+
+}

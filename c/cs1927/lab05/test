@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo test for 100
+
+time ./mergeSortSC100 < rdm100k > /dev/null
+time ./mergeSortSC100 < rdm100k > /dev/null
+time ./mergeSortSC100 < rdm100k > /dev/null
+
+echo test for 200
+
+time ./mergeSortSC200 < rdm100k > /dev/null
+time ./mergeSortSC200 < rdm100k > /dev/null
+time ./mergeSortSC200 < rdm100k > /dev/null

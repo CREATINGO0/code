@@ -1,0 +1,26 @@
+import java.util.*;
+
+public class DateTester {
+    public static void main(String[] args) {
+        Calendar c = Calendar.getInstance();
+        System.out.println(c.get(Calendar.YEAR));
+        c.add(Calendar.DAY_OF_MONTH, 365);
+        System.out.println(c.get(Calendar.YEAR));
+    	/*
+        String Str = new String("Welcome to Tutorialspoint.com");
+        String SubStr1 = new String("Tutorials");
+        String SubStr2 = new String("Sutorials");
+
+        System.out.print("Found Index :" );
+        System.out.println(Str.indexOf( 'o' ));
+        System.out.print("Found Index :" );
+        System.out.println(Str.indexOf( 'o', 5 ));
+        System.out.print("Found Index :" );
+        System.out.println( Str.indexOf( SubStr1 ));
+        System.out.print("Found Index :" );
+        System.out.println( Str.indexOf( SubStr1, 15 ));
+        System.out.print("Found Index :" );
+        System.out.println(Str.indexOf( SubStr2 ));
+        */
+    }
+}

@@ -1,0 +1,35 @@
+/* testing journal
+ * you need to write a testing journal in which
+ * you document the kind of tests that you have
+ * performed on your ADT implementation.
+ */
+
+the white-box testing is done by the if(DEBUG)
+part. the idea comes from some macro of c++ or
+something. you define a flag indicating the
+mode of the code and some certain parts of code
+which shows how the program is working is
+executed iff the flag is labelled 'debug mode'
+and they are skipped during normal running.
+compared with those accomplished by macro, such
+method in c may take extra resources even if
+they are not doing anything in actural running.
+another problem is that they may be mixed up
+with those code which are doing the job and it
+is sometimes confusing. but after all, it makes
+life easier than commenting out testing parts
+especially when you have hundreds of lines of
+such code. 
+
+the black-box test is done with the provided
+code and the submit system on the server. i
+have to admit that this is some cheating trick
+since i have only developed a simple main()
+which only feeds some simple sentences. in
+fact my very first plan is to write a
+prototype and finish that with the response on
+the server, and it turned out to be quicker
+when the drv* are released. it is true that
+testing is of equal importance as developing
+or even higher if you are working on some
+vital project.

@@ -1,0 +1,12 @@
+01: import java.util.*;
+02: 
+03: public class CountryComparatorByName implements Comparator<Country>
+04: {
+05:    public int compare(Country country1, Country country2)
+06:    {
+07:       return country1.getName().compareTo(country2.getName());
+08:    }
+09: 
+10: }
+
+

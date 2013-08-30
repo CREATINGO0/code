@@ -1,0 +1,2 @@
+a star based on greedy where it considers not only the cost to the next
+node but also the cost till now.

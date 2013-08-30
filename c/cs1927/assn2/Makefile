@@ -1,0 +1,24 @@
+# this controls compilation of the program.
+# you only need to modify this if you create additional
+# files for your implementation. It must produce and
+# executable called assn2
+
+CC = gcc
+#CC = clang
+CFLAGS = -Wall -Werror -g
+
+.PHONY:	clean clobber
+
+all: assn2
+
+%o:%c
+	$(CC) $(CFLAGS) -c $<
+
+assn2: main.o Graph.o Agent.o
+	$(CC) -o assn2 main.o Graph.o Agent.o
+
+clean:
+	rm -f *.o core
+
+clobber: clean
+	rm -f assn3

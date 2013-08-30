@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "list.h"
+
+int main( void )
+{
+	Lnode *list = NULL;
+	int  ch,isBalanced = 1;
+
+	while(( ch = getchar()) != EOF ) {
+		switch( ch ) {
+			case ')':
+			case ']':
+			case '}': isBalanced = ( ch == list->data );
+				  list = pop( list );
+				  break;
+
+			default: list = push( makeNode( ch ), list );
+		}
+		printList( list );
+		printf("isBalanced = %d, ch = %d\n",isBalanced,ch);
+	}
+
+	isBalanced?puts("Yes, is balanced"):puts("No, not balanced");
+
+	freeList( list );
+
+	return 0;
+}

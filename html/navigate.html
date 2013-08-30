@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>The furthest we can reach with css</title>
+        <style>
+            body {
+                margin:0;
+                padding:0;
+            }
+            header {
+                background:#FFF;
+                position:fixed;
+                height:80px;
+                width:100vw;
+                z-index:10;
+            }
+            h1 { padding-left: 100px; }
+            .nav {
+                position:absolute;
+                top:10px;
+                right:85px
+            }
+            .nav li {
+                float:left;
+                list-style:none;
+                margin: 0 15px;
+            }
+
+            .sec {
+                height:100vh;
+                top:100vh;
+                width:100vw;
+                padding:100px;
+                position:fixed;
+                -moz-animation: out 2s 1;
+            }
+            #secone { top:0 }
+
+            .sec:target {
+                -moz-animation: in 2s 1;
+                top:0;
+                z-index:5
+            }
+
+            @-moz-keyframes in {
+                0% {
+                    left:100vw;
+                    top:0;
+                }
+                100% {
+                    left:0;
+                    top:0;
+                }
+            }
+            @-moz-keyframes out {
+                0% {
+                    left:0;
+                    top:0;
+                }
+                100% {
+                    left:-100vw;
+                    top:0;
+                }
+            }
+
+            #secone   { background-color: #FFB3A7 }
+            #sectwo   { background-color: #F9906F }
+            #secthree { background-color: #FFA400 }
+            #secfour  { background-color: #86AB45 }
+            #secfive  { background-color: #B9A193 }
+        </style>
+    </head>
+    <body>
+        <header>
+        <h1>PURE CSS TEST</h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="#secone">Section 1</a></li>
+                <li><a href="#sectwo">Section 2</a></li>
+                <li><a href="#secthree">Section 3</a></li>
+                <li><a href="#secfour">Section 4</a></li>
+                <li><a href="#secfive">Section 5</a></li>
+            </ul>
+        </nav>
+        </header>
+        <section class="sec" id="secone">
+            <h2>Section One</h2>
+            <p>blablabla</p>
+        </section>
+        <section class="sec" id="sectwo">
+            <h2>Section Two</h2>
+            <p>blablabla</p>
+        </section>
+        <section class="sec" id="secthree">
+            <h2>Section Three</h2>
+            <p>blablabla</p>
+        </section>
+        <section class="sec" id="secfour">
+            <h2>Section Four</h2>
+            <p>blablabla</p>
+        </section>
+        <section class="sec" id="secfive">
+            <h2>Section Five</h2>
+            <p>blablabla</p>
+        </section>
+    </body>
+</html>

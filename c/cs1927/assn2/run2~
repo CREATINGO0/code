@@ -1,0 +1,51 @@
+
+POLICE ACADEMY 1927
+
+Red alert! A thief is on the run.
+Agents, to your cars. You have 10 hours.
+
+Hour 0
+  T  D1  D2  D3  D4
+  3   1   1   1   1 
+
+Enter command: Hour 1
+  T  D1  D2  D3  D4
+  2   0   0   0   0 
+
+Hour 2
+  T  D1  D2  D3  D4
+  3   1   1   1   1 
+
+Hour 3
+  T  D1  D2  D3  D4
+  2   0   0   0   0 
+
+Hour 4
+  T  D1  D2  D3  D4
+  0   1   1   1   1 
+
+Hour 5
+  T  D1  D2  D3  D4
+  2   0   0   0   0 
+
+Hour 6
+  T  D1  D2  D3  D4
+  0   1   2   1   1 
+
+Hour 7
+  T  D1  D2  D3  D4
+  2   0   0   0   0 
+
+Hour 8
+  T  D1  D2  D3  D4
+  3   2   1   1   1 
+
+Hour 9
+  T  D1  D2  D3  D4
+  2   3   0   0   0 
+
+Hour 10
+  T  D1  D2  D3  D4
+  3   2   1   1   1 
+
+GAME OVER: YOU LOSE - TIME IS UP

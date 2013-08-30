@@ -1,0 +1,43 @@
+# DEADLINE 28th
+
+## 11.Jan
+
+mission accepted.
+
+## 12.Jan ~ 17.Jan
+
+reading requests trying to get the idea.
+for better reference added requests as comments.
+
+math tests sucks.
+
+## 18.Jan
+
+transfer all adt to .h files to fix strange compiling errors.
+
+## 20.Jan
+
+* task 0: names and informants stored.
+  for identity the new members of the adt are in japanese.
+  'namae' for 'names', 'joho' for 'informants'.
+  temp string 'johosha' in readGraph under same pattern.
+
+* task 0: stamina covered.
+  quite easy and nothing to mention.
+
+## 21.Jan
+
+* task 0: covered.
+  ignoring the getCurrentLocation function wastes too much time.
+
+## 22.Jan
+
+* task1: ideas.
+  add an int array to Agent recording visit counts.
+  ++ when reaches a city to [currentLocation].
+  get the least when making next move.
+
+## 25.Jan
+
+* task1: covered.
+  though citiesMedium too small for testing

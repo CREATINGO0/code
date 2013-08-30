@@ -1,0 +1,93 @@
+#include <stdio.h>
+
+#define TRUE     1
+#define FALSE    0
+
+#define SIZE     3
+#define NONE    -1
+#define NOUGHTS  0
+#define CROSSES  1
+#define EMPTY    2
+
+void  scanBoard( int board[SIZE][SIZE] );
+void printBoard( int board[SIZE][SIZE] );
+int   getWinner( int board[SIZE][SIZE] );
+
+int main( void ) {
+	int board[SIZE][SIZE];
+	int winner;
+
+	printf("Please enter the board:\n");
+	scanBoard( board );
+
+	printf("Here is the board:\n");
+	printBoard( board );
+
+	winner = getWinner( board );
+	if( winner == NOUGHTS) {
+		printf("Noughts win\n");
+	} else if( winner == CROSSES ) {
+		printf("Crosses win\n");
+	} else {
+		printf("No Winner\n");
+	}
+	return 0;
+}
+
+void  scanBoard( int board[SIZE][SIZE] ) {
+	int i,j;
+	for(i=0;i<SIZE;i++) {
+		for(j=0;j<SIZE;j++) {
+			scanf("%d",&board[i][j]);
+		}
+	}
+}
+
+void printBoard( int board[SIZE][SIZE] ) {
+	int i,j;
+	for(i=0;i<SIZE;i++) {
+		for(j=0;j<SIZE;j++) {
+			if(board[i][j] == NONE) {
+				board[i][j] = ' ';
+			} else if(board[i][j] == NOUGHTS) {
+				board[i][j] = 'O';
+			} else if(board[i][j] == CROSSES) {
+				board[i][j] = 'X';
+			} else {
+				board[i][j] = '.';
+			}
+			printf("%c ",board[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+int getWinner( int board[SIZE][SIZE] ) {
+	int i, j;
+	int check1 = check2 = 0;
+	int isEnd = 0;
+	int winner = NONE;
+
+	for( i = 0 ; isEnd = 0 && i < SIZE ; i++ ) {
+		j = 0;
+		while( board[i][j] == board[i][j + 1] ) {
+			if( j == SIZE - 1 ) {
+				isEnd = 1;
+				winner = board[i][j];
+			}
+			j++;
+		}
+	}
+
+	for( j = 0 ; isEnd = 0 && j < SIZE; j++ ) {
+		i = 0;
+		while( board[i][j] == board[i + 1][j] ) {
+			if( i == SIZE - 1 ) {
+				isEnd = 1;
+				winner = board[i][j];
+			}
+			i++;
+		}
+	}
+
+}

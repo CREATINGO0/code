@@ -1,0 +1,20 @@
+01: import java.util.*;
+02: 
+03: public class ComparatorTester
+04: {
+05:    public static void main(String[] args)
+06:    {
+07:       ArrayList<Country> countries = new ArrayList<Country>();
+08:       countries.add(new Country("Uruguay", 176220));
+09:       countries.add(new Country("Thailand", 514000));
+10:       countries.add(new Country("Belgium", 30510));
+11:       Comparator<Country>  comp = new CountryComparatorByName();
+12:       Collections.sort(countries, comp);
+13:          // Now the array list is sorted by country name
+14:       for (Country c : countries)
+15:         System.out.println(c.getName() + " " + c.getArea());
+16:    }
+17: }
+18: 
+
+

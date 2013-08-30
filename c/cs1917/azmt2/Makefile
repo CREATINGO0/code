@@ -1,0 +1,5 @@
+CC = gcc
+CFLAGS = -Wall
+
+hw2: hw2.c hw2.h
+	$(CC) hw2.c -o hw2 $(CFLAGS)

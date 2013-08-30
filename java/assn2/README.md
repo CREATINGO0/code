@@ -1,0 +1,45 @@
+# Courier delivery system
+
+## Principle
+
+* Ship input to create a new tasklist
+    * each task is created with a line of input
+    * tasks appended to the arraylist
+    * arraylist sealed in tasklist
+* Sort the arraylist
+    * where strategy pattern works
+    * Strategy interface declares sorting algo employed
+        * e.g. greedy always finds the closest next start
+* Print sorted result and task done
+
+## Classes
+
+* CourierDelivery.java:
+    * Main Program as listed above
+* Tasklist.java:
+    * called by CourierDelivery.java
+    * 1 to 1 CourierDelivery
+    * digest the input
+        * create a new Task object with each line of input
+    * append Task to private field list
+    * BTW count number of tasks
+* Task.java:
+    * called by Tasklist.java
+    * n to 1 Tasklist
+    * stores start and end coordinates and other stuff
+        * four integers easier than 2 array[2]
+    * calculate cost with parameters (endpoints of other tasks)
+        * either move cost or total cost
+* SortMethod.java:
+    * sort tasklist with different Strategy
+    * called by CourierDelivery
+* Strategy.java:
+    * sort method interface
+* Greedy.java:
+    * implements Strategy
+    * this is simply a working demo and basis for A*
+    * called by CourierDelivery
+* Progressive.java:
+    * implements Strategy
+    * employs A* on an abstract map. see comments for detail.
+    * called by CourierDelivery

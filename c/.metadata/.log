@@ -1,0 +1,9 @@
+!SESSION 2012-08-29 14:07:24.493 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.7.0_05-icedtea
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=zh_CN
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-08-29 14:08:34.565
+!MESSAGE Indexed 'lab7' (2 sources, 39 headers) in 1.09 sec: 1,322 declarations; 2,419 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
