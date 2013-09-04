@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-my $argn = $#ARGV + 1;
+my $argn = @ARGV;
 if ($argn != 2) {
     print "Usage: ./echon.pl";
 }

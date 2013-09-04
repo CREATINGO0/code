@@ -8,13 +8,14 @@ if (@ARGV == 0) {
 } else {
 
     foreach my $arg (@ARGV) {
+        my $pline = "";
         open(INPUT,"< $arg") or die "cannot open $arg\n";
         while (my $line = <INPUT>) {
             $line =~ s/\n/\t/g;
-            $line =~ s/\t\Z/\Z/g;
-            print $line;
+            $pline = $pline.$line;
         }
-        print "\n";
+        chop $pline;
+        print $pline."\n";
     }
 
 }
