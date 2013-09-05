@@ -1,5 +1,0 @@
-INDEX VERSION 1.126+/home/yuki/code/java/.metadata/.plugins/org.eclipse.jdt.core
-3285164110.index
-1235143557.index
-1889153798.index
-94753377.index
