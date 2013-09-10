@@ -3,6 +3,11 @@
 use strict;
 use warnings;
 
+if (@ARGV == 0) {
+    print "please tell word.\n";
+    exit 1;
+}
+
 my $word = $ARGV[0];
 
 foreach my $file (glob "poets/*.txt") {
@@ -23,7 +28,11 @@ foreach my $file (glob "poets/*.txt") {
         }
         $wordcount += scalar(@line);
     }
-    print "$file\n";
-    print "$matchcount/$wordcount\n";
+    $file =~ s/poets\///g;
+    $file =~ s/\.txt//g;
+    # print "$file\n";
+    # print "$matchcount/$wordcount\n";
+    my $ratio = $matchcount/$wordcount;
+    printf "%4d/%6d = %.9f %s\n", $matchcount, $wordcount, $ratio, $file;
 
 }
