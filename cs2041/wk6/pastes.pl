@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 if (@ARGV == 0) {
-    print "unvalid arguments.";
+    print "invalid arguments.";
 } else {
 
     foreach my $arg (@ARGV) {

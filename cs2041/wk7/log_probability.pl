@@ -26,10 +26,11 @@ foreach my $file (glob "poets/*.txt") {
             }
         }
     }
+    my $log = log(++$matchcount/$wordcount);
+    $matchcount--;
     $file =~ s/poets\///g;
     $file =~ s/\.txt//g;
     $file =~ s/_/ /g;
-    my $ratio = $matchcount/$wordcount;
-    printf "%4d/%6d = %.9f %s\n", $matchcount, $wordcount, $ratio, $file;
+    printf "log((%d+1)/%6d) = %8.4f %s\n", $matchcount, $wordcount, $log, $file;
 
 }
