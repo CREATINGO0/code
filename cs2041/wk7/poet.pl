@@ -9,8 +9,7 @@ if (@ARGV == 0) {
 }
 
 # for each poem?.txt
-#   (for each line)
-#   for each word
+#   for each line/word
 #     sum log_p for each poet
 #   sort poets by log_p
 #   return the one with top log_p
@@ -22,14 +21,15 @@ foreach my $arg (@ARGV) {
     open(UNK, "<$arg") or die "Cannot open file: $arg";
     while(<UNK>) {
 
-        my $sumlog = 0;
-
         $_ =~ tr/A-Z/a-z/;
         foreach my $toMatch (split(/[^A-Za-z]+/, $_)) {
+            print $toMatch."\n";
+            # for each word in unknown poem
 
             foreach my $file (glob "poets/*.txt") {
 
                 open(FILE, "<$file") or die "Cannot open file: $file";
+
                 my $wordcount = 0;
                 my $matchcount = 0;
                 while (<FILE>) {
@@ -43,17 +43,20 @@ foreach my $arg (@ARGV) {
                         }
                     }
                 }
+
                 my $log = log(++$matchcount/$wordcount);
-                $sumlog += $log;
                 $matchcount--;
                 $file =~ s/poets\///g;
                 $file =~ s/\.txt//g;
                 $file =~ s/_/ /g;
-                $log_p{"$file"}=$sumlog;
+                $log_p{"$file"} += $log;
 
             }
         }
-        print %log_p;
+        my $key;
+        foreach $key (sort keys %log_p) {
+            print "$key: $log_p{$key}.\n";
+        }
 
     }
 
