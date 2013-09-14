@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 if (@ARGV == 0) {
-    print "invalid arguments.\n";
+    print "please specify arguments.\n";
     exit 1;
 }
 
@@ -29,9 +29,9 @@ foreach my $arg (@ARGV) {
 
                 my $wordcount = 0;
                 my $matchcount = 0;
+
                 while (<FILE>) {
-                    $_ =~ tr/A-Z/a-z/;
-                    foreach my $candidate (split(/[^A-Za-z]+/, $_)) {
+                    foreach my $candidate (split(/[^A-Za-z]+/, lc $_)) {
                         if (not $candidate eq '') {
                             $wordcount++;
                             if ($candidate eq $toMatch) {
@@ -42,11 +42,12 @@ foreach my $arg (@ARGV) {
                 }
 
                 my $log = log(++$matchcount/$wordcount);
-                $matchcount--;
 
-                $file =~ s/poets\///g;
-                $file =~ s/\.txt//g;
-                $file =~ s/_/ /g;
+                for ($file) {
+                    s/poets\///g;
+                    s/\.txt//g;
+                    s/_/ /g;
+                }
                 $log_p{"$file"} += $log;
 
             } # end iterate each known file

@@ -16,8 +16,7 @@ foreach my $file (glob "poets/*.txt") {
     my $wordcount = 0;
     my $matchcount = 0;
     while (<FILE>) {
-        $_ =~ tr/A-Z/a-z/;
-        foreach my $candidate (split(/[^A-Za-z]+/, $_)) {
+        foreach my $candidate (split(/[^A-Za-z]+/, lc $_)) {
             if (not $candidate eq '') {
                 $wordcount++;
                 if ($candidate eq $word) {
