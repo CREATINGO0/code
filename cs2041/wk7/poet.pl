@@ -18,13 +18,10 @@ foreach my $arg (@ARGV) {
 
     my %log_p = ();
 
-    open(UNK, "<$arg") or die "Cannot open file: $arg";
-    while(<UNK>) {
+    open(UNKNOWN, "<$arg") or die "Cannot open file: $arg";
+    while(<UNKNOWN>) {
 
-        $_ =~ tr/A-Z/a-z/;
-        foreach my $toMatch (split(/[^A-Za-z]+/, $_)) {
-            print $toMatch."\n";
-            # for each word in unknown poem
+        foreach my $toMatch (split(/[^A-Za-z]+/, lc $_)) {
 
             foreach my $file (glob "poets/*.txt") {
 
@@ -46,18 +43,21 @@ foreach my $arg (@ARGV) {
 
                 my $log = log(++$matchcount/$wordcount);
                 $matchcount--;
+
                 $file =~ s/poets\///g;
                 $file =~ s/\.txt//g;
                 $file =~ s/_/ /g;
                 $log_p{"$file"} += $log;
 
-            }
-        }
-        my $key;
-        foreach $key (sort keys %log_p) {
-            print "$key: $log_p{$key}.\n";
-        }
+            } # end iterate each known file
 
-    }
+        } # end iterate each word from unknown file
 
-}
+    } # end iterate each line from unknown file
+
+    # sort by value
+    my @sortedkeys = sort { $log_p{$b} <=> $log_p{$a} } keys %log_p;
+    my $result = $sortedkeys[0];
+    printf "%s most resembles the work of %s (log-probablity=%.1f)\n",$arg,$result,$log_p{$result};
+
+} # end iterate unknown files
