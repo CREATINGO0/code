@@ -13,52 +13,52 @@ foreach my $arg (@ARGV) {
     }
 }
 
-foreach my $course (@ARGV) {
+if ($printMode != 2) {
 
-    $course = uc $course;
-    my $url = "http://www.timetable.unsw.edu.au/2013/".$course.".html";
-    open F, "wget -q -O- $url|" or die "failed to retrieve courses";
+    foreach my $course (@ARGV) {
 
-    if ($printMode == 0) { # normal
+        $course = uc $course;
+        my $url = "http://www.timetable.unsw.edu.au/2013/".$course.".html";
+        open F, "wget -q -O- $url|" or die "failed to retrieve courses";
+
         while (my $line=<F>) {
             if ($line =~ /Lecture<\/a>/) {
                 $line=<F>;
-                $line =~ s/.*T1.*/S1/g;
-                $line =~ s/.*T2.*/S2/g;
-                $line =~ s/\n//g;
-                print "$course: $line";
+                $line =~ /[^0-9]*T([12])<\/a/;
+                my $sem = "S".$1;
+                if ($printMode == 0) { # normal
+                    print "$course: $sem";
+                }
                 for (my $i=0;$i<5;$i++) {
                     $line=<F>;
                 }
                 $line =~ s/<\/td>$//g;
                 $line =~ s/^\s*<.*>//g;
-                print " $line";
-            }
-        }
-    } elsif ($printMode == 1) { # detail
-        while (my $line=<F>) {
-            if ($line =~ /Lecture<\/a>/) {
-                $line=<F>;
-                $line =~ s/T1/S1/g;
-                $line =~ s/T2/S2/g;
-                $line =~ /(S[12])/;
-                my $sem = $1;
-                for (my $i=0;$i<5;$i++) {
-                    $line=<F>;
-                }
-                $line =~ s/<\/td>$//g;
-                $line =~ s/^\s*<.*>//g;
-                foreach my $slot (split(/,\s+/,$line)) {
-                    print "$slot\n";
-                    $slot =~ /\s*([A-Za-z]{3})/;
-                    my $week = $1;
-                    $slot =~ /[^0-9]+([0-9]{2})/;
-                    my ($start,$end) = ($1,$2);
-# print "$week, $start, $end\n";
+                if ($printMode == 0) { # normal
+                    print " $line";
+                } elsif ($printMode == 1) {
+                    foreach my $slot (split(/,\s+/,$line)) {
+                        $slot =~ /([A-Za-z]{3})[^0-9]*([0-9]{2}):[0-9]{2}[\s\-]+([0-9]{2})/;
+                        my ($week,$start,$end) = ($1,$2,$3);
+                        while ($start < $end) {
+                            print "$sem $course $week $start\n";
+                            $start++;
+                        }
+                    }
                 }
             }
         }
-    } elsif ($printMode == 2) { # table
 
+    }
+}
+
+if ($printMode == 2) { # table
+    print "S1       Mon   Tue   Wed   Thu   Fri\n";
+    for (my $i=9;$i<21;$i++) {
+        printf "%2d:00\n",$i
+    }
+    print "S2       Mon   Tue   Wed   Thu   Fri\n";
+    for (my $i=9;$i<21;$i++) {
+        printf "%2d:00\n",$i
     }
 }
