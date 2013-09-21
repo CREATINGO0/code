@@ -23,6 +23,9 @@ foreach my $arg (@ARGV) {
 
         foreach my $toMatch (split(/[^A-Za-z]+/, lc $_)) {
 
+            if (not $toMatch) {
+                next;
+            }
             foreach my $file (glob "poets/*.txt") {
 
                 open(FILE, "<$file") or die "Cannot open file: $file";
@@ -32,11 +35,10 @@ foreach my $arg (@ARGV) {
 
                 while (<FILE>) {
                     foreach my $candidate (split(/[^A-Za-z]+/, lc $_)) {
-                        if (not $candidate eq '') {
-                            $wordcount++;
-                            if ($candidate eq $toMatch) {
-                                $matchcount++;
-                            }
+                        next if not $candidate;
+                        $wordcount++;
+                        if ($candidate eq $toMatch) {
+                            $matchcount++;
                         }
                     }
                 }
@@ -56,7 +58,7 @@ foreach my $arg (@ARGV) {
 
     } # end iterate each line from unknown file
 
-    # sort by value
+# sort by value
     my @sortedkeys = sort { $log_p{$b} <=> $log_p{$a} } keys %log_p;
     my $result = $sortedkeys[0];
     printf "%s most resembles the work of %s (log-probablity=%.1f)\n",$arg,$result,$log_p{$result};
