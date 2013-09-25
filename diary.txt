@@ -1,0 +1,157 @@
+commit 6638ee73db392aa204c7244dcd08a727574984a4
+Merge: 88df5ef 48bc3cc
+Author: chadluo <i@yukir.net>
+Date:   Sun Sep 22 07:08:44 2013 +1000
+
+    Merge branch 'master' of https://github.com/chadluo/code
+
+commit 88df5ef0424d421235c5c4128908b6ed4b9e7421
+Author: chadluo <i@yukir.net>
+Date:   Sun Sep 22 07:08:18 2013 +1000
+
+    130922
+
+commit 69393d43e631e1e9c41fe05a41e0d5fc38596daf
+Author: chadluo <i@yukir.net>
+Date:   Sun Sep 22 07:07:15 2013 +1000
+
+    indentation
+
+commit 48bc3ccd9753eece63009bf6f44699052c95c4c4
+Author: chadluo <i@yukir.net>
+Date:   Wed Sep 18 18:02:45 2013 +1000
+
+    ./courses.pl COMP | tr "\n" " " | xargs ./lectures.pl -t
+
+commit 45077f109ed3073476db671148fb672a308f8403
+Author: chadluo <i@yukir.net>
+Date:   Wed Sep 18 17:55:50 2013 +1000
+
+    wk8 done w/o opti
+
+commit c6309f2fe952ceb17b80297de4c855c681b7833b
+Author: chadluo <i@yukir.net>
+Date:   Wed Sep 18 17:17:00 2013 +1000
+
+    130918
+
+commit 14ec69b7dd02833ddcbbc932a25b5c939118edc5
+Author: chadluo <i@yukir.net>
+Date:   Wed Sep 18 16:43:01 2013 +1000
+
+    130918
+
+commit 05205c8e49e8b13048440f8b8320d28e88b0c8db
+Author: chadluo <i@yukir.net>
+Date:   Wed Sep 18 14:16:55 2013 +1000
+
+    130918
+
+commit b43a257de44e647b3a82c835b734559f5f0e6798
+Author: chadluo <i@yukir.net>
+Date:   Wed Sep 18 10:51:27 2013 +1000
+
+    130918
+
+commit b8f495a70cf59012b4728f33af07e1c1117a2aab
+Author: chadluo <i@yukir.net>
+Date:   Sun Sep 15 00:18:38 2013 +1000
+
+    130915
+
+commit 7ab18e2c7c54fca15d01186108422aad2c30f58b
+Author: chadluo <i@yukir.net>
+Date:   Sat Sep 14 23:53:45 2013 +1000
+
+    wk7 done?
+
+commit fbc1cd1c95dbc708c50debed742377ff38cfd90a
+Author: chadluo <i@yukir.net>
+Date:   Fri Sep 13 20:07:12 2013 +1000
+
+    130913
+
+commit f18f7caeb35ff61ecf50d96fc4eab4da51f29629
+Author: chadluo <i@yukir.net>
+Date:   Wed Sep 11 17:46:35 2013 +1000
+
+    130911
+
+commit 75c0d051103b7ddc7bcfbffb34e58c158dcd37e4
+Author: chadluo <i@yukir.net>
+Date:   Wed Sep 11 17:18:02 2013 +1000
+
+    130911
+
+commit bb2df582365b90be1476c68d0070a75d19c52ecd
+Author: chadluo <i@yukir.net>
+Date:   Wed Sep 11 02:30:04 2013 +1000
+
+    130911
+
+commit 4909a2159e35320e325e5fd42c2b8e5aec6b38a3
+Author: chadluo <i@yukir.net>
+Date:   Wed Sep 11 02:11:53 2013 +1000
+
+    130911
+
+commit c05bd25f2d7242342ab77597577019bc31e7e93a
+Author: chadluo <i@yukir.net>
+Date:   Tue Sep 10 15:41:38 2013 +1000
+
+    130910
+
+commit b1d67256b770b8ea871c2e06a66504ec70a95760
+Author: chadluo <i@yukir.net>
+Date:   Mon Sep 9 02:20:10 2013 +1000
+
+    130909
+
+commit 991e86679d585b82d59ba2241aef03a12fe93ef2
+Author: chadluo <i@yukir.net>
+Date:   Thu Sep 5 17:43:31 2013 +1000
+
+    130905
+
+commit 2e2038eed6677638883e581f666a6fed5900c8da
+Author: chadluo <i@yukir.net>
+Date:   Thu Sep 5 16:59:10 2013 +1000
+
+    remove
+
+commit 9d911c7f2fe72b8bd9c78faa0dff0628d1abb1c8
+Author: Xirui Luo <xluo086@cse.unsw.EDU.AU>
+Date:   Wed Sep 4 17:35:59 2013 +1000
+
+    wk6
+
+commit 9e81c75c498dc0580df9c2abefa42ef89b5b15d9
+Merge: 1acea37 de24e09
+Author: chadluo <i@yukir.net>
+Date:   Wed Sep 4 14:38:10 2013 +1000
+
+    Merge branch 'master' of https://github.com/chadluo/code
+
+commit 1acea37c7999fbd330b2763ec5da6c017ef83bd7
+Author: chadluo <i@yukir.net>
+Date:   Wed Sep 4 14:37:27 2013 +1000
+
+    130904
+
+commit de24e09a9b1b0916d5343c2c33c909c6863daa0f
+Author: yukirock <i@yukir.net>
+Date:   Fri Aug 30 11:11:41 2013 +1000
+
+    Delete title.png
+
+commit 997ad95a69674e7ee05af63dfd3f8790f693f0f0
+Author: chadluo <i@yukir.net>
+Date:   Fri Aug 30 11:00:10 2013 +1000
+
+    init
+
+commit f869a0e1988acbacc53229e958fe1720bf8c4b05
+Author: chadluo <i@yukir.net>
+Date:   Fri Aug 30 10:58:53 2013 +1000
+
+    init
